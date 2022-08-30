@@ -1,0 +1,104 @@
+.trivia {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.trivia__question {
+    width: 80%;
+    background: linear-gradient(#100241, black);
+    border: 2px solid white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+.trivia__options {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.trivia__answer {
+    width: 40%;
+    padding: 10px;
+    text-align: center;
+    background: linear-gradient(#0e0124, #22074d);
+    border: 1px solid white;
+    border-radius: 15px;
+    font-size: 20px;
+    font-weight: 300;
+    margin: 0 10px 20px 10px;
+    cursor: pointer;
+}
+
+.trivia__answer:hover, .trivia__answer.active {
+    background: mediumblue;
+    transform: scale(1.09);
+    transition: 0.5s ease-in-out;
+}
+
+.trivia__answer.correct {
+    animation: correct 3s ease forwards;
+}
+
+@keyframes correct {
+    0%, 22%, 42% {
+        background: mediumblue;
+    }
+
+    20%, 40%, 60% {
+        background: linear-gradient(#0e0124, #22074d);
+    }
+
+    62%, 100% {
+        background: green; /*It would now be green from 62% up until 100%*/
+    }
+}
+
+.trivia__answer.wrong {
+    animation: wrong 3s ease forwards;
+}
+
+@keyframes wrong {
+ 
+    0%,
+    22%,
+    42% {
+        background: mediumblue;
+    }
+
+    20%,
+    40%,
+    60% {
+        background: linear-gradient(#0e0124, #22074d);
+    }
+
+    62%,
+    100% {
+        background: crimson;
+        /*It would now be green from 62% up until 100%*/
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .trivia__question {
+        font-size: 11px;
+        padding: 10px;
+    }
+
+    .trivia__options {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .trivia__answer {
+        font-size: 11px;
+        width: 55%;
+    }
+    
+}

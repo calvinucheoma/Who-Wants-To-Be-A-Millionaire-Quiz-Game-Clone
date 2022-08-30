@@ -1,38 +1,247 @@
-.App {
-  text-align: center;
+.app {
+  height: 100vh;
+  display: flex;
+  background-color: #020230;
+  color: white;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.main {
+  /* width: 75%; */
+  flex: 0.75;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #020230), 
+  url("./assets/bg.jpg") center center;
+  display: flex;
+  flex-direction: column;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.mainTop {
+  flex: 0.5;
+  position: relative;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.mainBottom {
+  flex: 0.5;
+}
+
+.timer {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 5px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: 700;
+  position: absolute;
+  bottom: 10px;
+  left: 80px;
+}
+
+.pyramid {
+  /* width: 25%; */
+  flex: 0.25;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  overflow-x: scroll;
+  overflow-y: none;
+}
+
+.moneyList {
+  list-style-type: none;
+  width: 100%;
+  padding: 20px;
+}
+
+.moneyListItem {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.moneyListItem.active {
+  background-color: teal;
+}
+
+.moneyListItemNumber {
+  font-size: 18px;
+  font-weight: 100;
+  flex: 0.3;
+}
+
+.moneyListItemAmount {
+  font-size: 20px;
+  font-weight: 300;
+  flex: 0.7;
+  text-align: end;
+}
+
+/* .endText {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+} */
+
+.endPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+}
+
+.endButton {
+   width: 50%;
+   margin-top: 50px;
+   font-size: 14px;
+   border-radius: 10px;
+   padding: 10px;
+   font-weight: 700;
+   cursor: pointer;
+}
+
+.endButton:hover {
+  transform: scale(1.09);
+  transition: 0.5s ease-in-out;
+  background-color: #020230;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.userList {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.gameButtons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px;
+  margin-bottom: 30px;
+}
+
+.quitGame {
+  padding: 5px;
+  font-size: 14px;
+  font-weight: 550;
+  background-color: rgb(16, 93, 236);
+  color: white; 
+  cursor: pointer;
+  width: 40%;
+}
+
+.exitGame {
+  padding: 5px;
+  font-size: 14px;
+  font-weight: 550;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  width: 40%;
+}
+
+.userDetails {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border-bottom: 2px solid #fff;
+}
+
+.userName {
+  margin-bottom: 15px;
+  font-weight: 900;
+  color: rgb(15, 237, 15);
+}
+
+.userMoney {
+  font-weight: 700;
+  color: rgb(15, 237, 15);
+}
+
+@media screen and (max-width: 560px) {
+  .moneyList {
+      padding: 5px;
+    }
+  
+    .moneyListItem {
+      display: flex;
+      align-items: center;
+      padding: 5px;
+      border-radius: 5px;
+    }
+
+    .moneyListItemNumber {
+      font-size: 10px;
+      font-weight: 100;
+      flex: 0.3;
+    }
+
+    .moneyListItemAmount {
+      font-size: 12px;
+      font-weight: 300;
+      flex: 0.7;
+      text-align: end;
+    }
+
+    .endText {
+      font-size: 16px;
+    }
+
+    .endButton {
+      width: 100%;
+    }
+
+    .gameButtons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 10px;
+      margin-bottom: 30px;
+    }
+
+    .quitGame {
+      font-size: 12px;
+      font-weight: 450;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .exitGame {
+      font-size: 12px;
+      font-weight: 450;
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    .userDetails {
+      padding: 5px;
+    }
+
+    .userName {
+      margin-bottom: 10px;
+      font-weight: 500;
+      font-size: 13px;
+    }
+
+    .userMoney {
+      font-weight: 300;
+      font-size: 12px;
+    }
+    
+    .timer {
+      bottom: 10%;
+      left: 35%;
+    }
 }
