@@ -49,6 +49,10 @@
   overflow-y: none;
 }
 
+.pyramid::-webkit-scrollbar {
+  display: none;
+}
+
 .moneyList {
   list-style-type: none;
   width: 100%;
